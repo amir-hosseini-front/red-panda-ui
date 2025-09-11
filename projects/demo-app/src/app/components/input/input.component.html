@@ -1,0 +1,45 @@
+<div class="flex gap-4 p-12">
+  <rp-input
+    class="flex-1"
+    [formControl]="form.controls.email"
+    [disabled]="false"
+    label="Email"
+    [placeholder]="'Please enter email'"
+    [errorMessages]="[
+      { type: 'required', message: 'Email is required' },
+      { type: 'email', message: 'Please enter a valid email' }
+    ]"
+  ></rp-input>
+  <rp-input
+    class="flex-1"
+    [formControl]="form.controls.name"
+    [disabled]="false"
+    label="Name"
+    [errorMessages]="[
+      { type: 'required', message: 'Email is required' },
+      { type: 'email', message: 'Please enter a valid email' }
+    ]"
+  ></rp-input>
+</div>
+<div class="flex gap-4 px-12">
+  <rp-input
+    class="flex-1"
+    [formControl]="form.controls.phone"
+    [disabled]="false"
+    [placeholder]="'Please enter phone'"
+    [errorMessages]="[
+      { type: 'required', message: 'Email is required' },
+      { type: 'email', message: 'Please enter a valid email' }
+    ]"
+  ></rp-input>
+  <rp-input
+    class="flex-1"
+    [formControl]="form.controls.code"
+    [disabled]="true"
+    [placeholder]="'Please enter code'"
+    [errorMessages]="[
+      { type: 'required', message: 'Email is required' },
+      { type: 'email', message: 'Please enter a valid email' }
+    ]"
+  ></rp-input>
+</div>

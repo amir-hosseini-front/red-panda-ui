@@ -1,0 +1,44 @@
+<button
+  (click)="clicked()"
+  [ngClass]="[
+    'button',
+    disable ? 'disabled' : '',
+    theme,
+    colorState,
+    size,
+    loading ? 'cursorLoading' : ''
+  ]"
+  [type]="buttonType"
+>
+  <ng-content *ngIf="!loading"></ng-content>
+  <rp-spinner
+    *ngIf="loading"
+    class="loading"
+    [colorState]="colorState"
+    [size]="20"
+  ></rp-spinner>
+</button>
+<rp-modal
+  [open]="openConfirmDialog"
+  [headerTitle]="confirmDialog?.title"
+  (close)="openConfirmDialog = false"
+>
+  <p class="max-w-lg">{{ confirmDialog?.text }}</p>
+  <div class="grid grid-cols-4 gap-x-2 mt-8" dir="ltr">
+    <button
+      class="col-span-1 button square default small"
+      (click)="close()"
+      type="button"
+    >
+      {{ confirmDialog?.cancelBtn }}
+    </button>
+
+    <button
+      class="col-span-1 button square danger small"
+      (click)="confirm()"
+      type="button"
+    >
+      {{ confirmDialog?.confirmBtn }}
+    </button>
+  </div>
+</rp-modal>

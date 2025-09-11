@@ -1,0 +1,10 @@
+<p (click)="isModalOpen = !isModalOpen">CLICK MODAL!</p>
+
+<rp-modal
+  [open]="isModalOpen"
+  [headerTitle]="'Show Detail'"
+  (close)="isModalOpen = false"
+>
+  <p>Hello!</p>
+  <p>This is a Modal 🥳</p>
+</rp-modal>

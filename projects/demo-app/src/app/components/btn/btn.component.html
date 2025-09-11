@@ -1,0 +1,23 @@
+<div class="flex gap-4 p-12">
+  <rp-button class="col-span-1" [size]="'xsmall'" [color]="'Orange'"
+    >Close</rp-button
+  >
+  <rp-button [loading]="false" class="col-span-1" [colorState]="'warning'">
+    Update
+  </rp-button>
+  <rp-button [loading]="false" class="col-span-1" [colorState]="'success'">
+    Insert
+  </rp-button>
+  <rp-button
+    [loading]="false"
+    class="col-span-1"
+    [colorState]="'danger'"
+    [confirmDialog]="confirmDelete"
+    >Delete</rp-button
+  >
+  <div class="fixed bottom-10 left-16">
+    <rp-button [theme]="'round'"
+      ><move-to-inbox-icon class="h-5 grid px-3 fill-white"></move-to-inbox-icon
+    ></rp-button>
+  </div>
+</div>

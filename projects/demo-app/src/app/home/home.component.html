@@ -1,0 +1,5 @@
+<div class="grid grid-cols-3 gap-x-2 p-3" dir="ltr">
+  <div *ngFor="let list of elementList">
+    <a [routerLink]="list.link">{{ list.name }}</a>
+  </div>
+</div>
