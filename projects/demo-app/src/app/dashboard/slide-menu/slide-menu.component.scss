@@ -1,0 +1,214 @@
+@mixin userSelect {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.container-menu {
+  display: flex;
+  .navigation {
+    position: relative;
+    width: 250px;
+    overflow-x: hidden;
+    &:hover {
+      width: 250px;
+      transition: width 0.5s;
+      ul {
+        .list {
+          .separator {
+            .title {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      @include userSelect();
+      .list {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        cursor: pointer;
+        .active {
+          .title {
+            color: #2c7be5;
+          }
+          .icon {
+            fill: #2c7be5;
+          }
+        }
+        .menu {
+          width: 100%;
+          display: flex;
+          text-decoration: none;
+          border-radius: 8px;
+          .icon {
+            display: flex;
+            flex: none;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            min-width: 60px;
+            height: 60px;
+            text-align: center;
+            line-height: 60px;
+            font-size: 1.5em;
+            z-index: 1;
+            padding-inline: 16px;
+          }
+          .title {
+            flex: 1;
+            position: relative;
+            display: block;
+            padding-left: 10px;
+            height: 60px;
+            line-height: 60px;
+            white-space: nowrap;
+            text-align: justify;
+            font-size: 15px;
+            font-weight: 600;
+          }
+          .icon-arrow {
+            flex: none;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            padding-inline: 12px;
+          }
+          .icon-arrow-active {
+            flex: none;
+            transform: rotate(180deg);
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            padding-inline: 12px;
+            fill: #5e6e82;
+          }
+          &:hover {
+            background-color: #dfe6f278 !important;
+          }
+        }
+        div {
+          .child-list {
+            padding-inline-start: 60px;
+            padding-block: 8px;
+            border-radius: 8px;
+            text-align: justify;
+            .title {
+              color: #5e6e82;
+              font-size: 13px;
+              text-align: justify;
+              font-weight: 600;
+            }
+            &:hover {
+              background-color: #dfe6f278;
+            }
+          }
+          .active {
+            padding-inline-start: 60px;
+            padding-block: 8px;
+            border-radius: 8px;
+            .title {
+              color: #2c7be5;
+              font-size: 13px;
+            }
+          }
+        }
+        .separator {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          min-height: 60px;
+          padding-inline: 16px;
+          text-decoration: none;
+          gap: 12px;
+          cursor: default;
+          .title {
+            position: relative;
+            display: block;
+            padding-left: 4px;
+            height: 60px;
+            line-height: 60px;
+            text-align: justify;
+            white-space: nowrap;
+            font-size: 15px;
+            font-weight: 600;
+            color: rgb(156 154 154);
+          }
+          .line {
+            height: 1px;
+            width: 100%;
+            background-color: rgb(156 154 154);
+          }
+        }
+      }
+    }
+  }
+  .navigation-close {
+    width: 60px;
+    transition: width 0.5s;
+    ul {
+      .list {
+        .separator {
+          .title {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+.list .icon {
+  width: 24px;
+}
+.custom-scroll {
+  overflow-y: scroll;
+  overflow-y: hidden;
+  scrollbar-gutter: stable;
+  transition: overflow 0.8s ease;
+}
+.custom-scroll:hover {
+  overflow-y: auto;
+}
+.custom-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #adadad transparent;
+}
+.custom-scroll::-webkit-scrollbar {
+  width: 8px;
+  background: transparent;
+}
+.custom-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scroll::-webkit-scrollbar-button {
+  display: none;
+}
+.custom-scroll::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+  border: none;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+
+.helper-key{
+    position: absolute;
+    text-align: center;
+    width: 24px;
+    top: -5px;
+    background: white;
+    padding: 2px 4px;
+    border-radius: 4px;
+    border: 1px solid #999999;
+    right: -30px;
+}

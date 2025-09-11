@@ -1,0 +1,38 @@
+.boxShadow {
+  box-shadow: inset -8px 8px 8px -8px rgba(0, 0, 0, 0.2);
+}
+.container-dashboard {
+  height: calc(100vh - 60px);
+}
+.custom-scroll {
+  overflow-y: scroll;
+  overflow-y: hidden;
+  scrollbar-gutter: stable;
+  transition: overflow 0.8s ease;
+}
+.custom-scroll:hover {
+  overflow-y: auto;
+}
+.custom-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #adadad transparent;
+}
+.custom-scroll::-webkit-scrollbar {
+  width: 12px;
+  background: transparent;
+}
+.custom-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scroll::-webkit-scrollbar-button {
+  display: none;
+}
+.custom-scroll::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+  border: none;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
