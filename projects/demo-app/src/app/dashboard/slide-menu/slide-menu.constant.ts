@@ -35,16 +35,20 @@ export function getMenuItems(): Item[] {
       type: 'menu',
       child: [
         {
-          title: 'Button',
-          link: '/tut',
+          title: 'Buttons',
+          link: '/buttons',
         },
         {
           title: 'Input',
-          link: '/dsf',
+          link: '/input',
         },
         {
           title: 'Selector',
-          link: '/ads',
+          link: '/selector',
+        },
+        {
+          title: 'Spinner',
+          link: '/spinner',
         },
       ],
     },

@@ -11,6 +11,11 @@ import { ColorState } from '../redpandaTypes';
 })
 export class RpSpinnerComponent {
   @Input() size: number = 24;
-  @Input() colorState: ColorState = 'default';
+  @Input() color: ColorState = 'default';
   @Input() type: 'circle' | 'line' = 'circle';
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+    console.log(this.color);
+  }
 }

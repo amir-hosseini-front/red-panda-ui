@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RpSpinnerComponent } from './rp-spinner.component';
+import { RpCardComponent } from './rp-card.component';
 
-describe('RpSpinnerComponent', () => {
-  let component: RpSpinnerComponent;
-  let fixture: ComponentFixture<RpSpinnerComponent>;
+describe('RpCardComponent', () => {
+  let component: RpCardComponent;
+  let fixture: ComponentFixture<RpCardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RpSpinnerComponent]
+      imports: [RpCardComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(RpSpinnerComponent);
+    fixture = TestBed.createComponent(RpCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

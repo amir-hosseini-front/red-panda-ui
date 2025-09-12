@@ -1,0 +1,44 @@
+<div class="p-4 h-screen/90 overflow-y-auto">
+  <div class="col-span-2 flex">
+    <div class="relative text-justify">
+      <span class="headerLine"></span>
+      <span
+        class="relative pl-4 bg-background-color z-20 text-2xl font-bold text-side-menu-active-color"
+        >Selector
+      </span>
+    </div>
+  </div>
+  <rp-card class="block col-span-1 justify-between pt-4">
+    <div class="grid grid-cols-3 gap-4 pt-4 h-[70vh]">
+      <rp-selector
+        class="block mx-4 w-80"
+        [titleKey]="'title'"
+        [valueKey]="'value'"
+        [defaultValue]="defaultValue"
+        [label]="'select item'"
+        [items]="gender | async"
+        [inputFormControl]="form.get('city')! | formControl"
+      ></rp-selector>
+      <rp-selector
+        class="block mx-4 w-80"
+        [titleKey]="'title'"
+        [valueKey]="'value'"
+        [label]="'select item'"
+        [items]="gender | async"
+        [inputFormControl]="form.get('gender')! | formControl"
+        (onItemSelected)="selectItem = $event"
+      ></rp-selector>
+      <rp-selector
+        class="block mx-4 w-80"
+        [titleKey]="'title'"
+        [valueKey]="'value'"
+        [label]="'select item'"
+        [defaultValue]="defaultValue"
+        [disabled]="true"
+        [items]="gender | async"
+        [inputFormControl]="form.get('gender')! | formControl"
+        (onItemSelected)="selectItem = $event"
+      ></rp-selector>
+    </div>
+  </rp-card>
+</div>

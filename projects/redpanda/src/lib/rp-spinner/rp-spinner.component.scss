@@ -137,6 +137,22 @@
   border-radius: 20px;
   position: relative;
   overflow: hidden;
+  &.success::after{
+    background: var(--success-button-color);
+  }
+  &.warning::after {
+    background: var(--warning-button-color);
+  }
+  &.default::after {
+    background: var(--default-button-color);
+  }
+  &.primary::after {
+    background: var(--primary-button-color);
+  }
+  &.danger::after {
+    background: var(--danger-button-color);
+  }
+  
 }
 .line-progress-bar::after {
   content: "";
@@ -147,8 +163,9 @@
   width: 0%;
   height: 100%;
   animation: grow 1.5s ease-in-out infinite;
-  background: var(--primary-button-color);
+  background: var(--spinner-color);
 }
+
 
 @keyframes grow {
   50% {
