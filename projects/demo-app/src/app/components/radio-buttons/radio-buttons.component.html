@@ -1,0 +1,39 @@
+<div class="p-4 h-screen/90 overflow-y-auto">
+  <div class="col-span-2 flex">
+    <div class="relative text-justify">
+      <span class="headerLine"></span>
+      <span
+        class="relative pl-4 bg-background-color z-20 text-2xl font-bold text-side-menu-active-color"
+        >Radio Button
+      </span>
+    </div>
+  </div>
+  <rp-card class="block col-span-1 justify-between mt-4">
+    <div class="flex flex-col p-4 gap-3">
+      <rp-radio-buttons
+        class="flex-1"
+        [titleKey]="'title'"
+        [valueKey]="'value'"
+        [layout]="'row'"
+        [name]="'r1'"
+        [defaultValue]="'RadioButton2'"
+        [items]="(getFromDestinationFilterList | async)!"
+        (onChange)="onChange($event)"
+      ></rp-radio-buttons>
+    </div>
+  </rp-card>
+  <rp-card class="block col-span-1 justify-between mt-4">
+    <div class="flex flex-col p-4 gap-3">
+      <rp-radio-buttons
+        class="flex-1"
+        [titleKey]="'title'"
+        [valueKey]="'value'"
+        [layout]="'column'"
+        [name]="'r2'"
+        [defaultValue]="'RadioButton2'"
+        [items]="(getFromDestinationFilterList | async)!"
+        (onChange)="onChange($event)"
+      ></rp-radio-buttons>
+    </div>
+  </rp-card>
+</div>
