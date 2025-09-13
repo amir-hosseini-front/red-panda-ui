@@ -4,7 +4,7 @@
       <span class="headerLine"></span>
       <span
         class="relative pl-4 bg-background-color z-20 text-2xl font-bold text-side-menu-active-color"
-        >Spinner
+        >Buttons
       </span>
     </div>
   </div>
@@ -71,7 +71,7 @@
  &lt;rp-button 
     [size]="'xsmall'" 
     [colorState]="'default'" 
-    [theme]="'round'"
+    [theme]="'square'"
  &gt; Close &lt;/rp-button&gt; </pre
       >
     </div>
@@ -104,7 +104,7 @@
  &lt;rp-button 
     [size]="'xsmall'" 
     [colorState]="'default'" 
-    [theme]="'round'"
+    [theme]="'square'"
     [isDisabled]="true"
  &gt; Close &lt;/rp-button&gt; </pre
       >
@@ -169,7 +169,7 @@ const confirmDelete ConfirmDialog = &#123;
     class="inline-block !w-32"
     [size]="'xsmall'" 
     [colorState]="'default'" 
-    [theme]="'round'"
+    [theme]="'square'"
     [confirmDialog]="confirmDelete"
  &gt; Delete &lt;/rp-button&gt; </pre
       >
@@ -182,6 +182,11 @@ const confirmDelete ConfirmDialog = &#123;
         [confirmDialog]="confirmDelete"
         >Delete</rp-button
       >
+      <!-- <rp-button [theme]="'round'"
+        ><move-to-inbox-icon
+          class="h-5 grid px-3 fill-white"
+        ></move-to-inbox-icon
+      ></rp-button> -->
     </div>
   </rp-card>
 </div>

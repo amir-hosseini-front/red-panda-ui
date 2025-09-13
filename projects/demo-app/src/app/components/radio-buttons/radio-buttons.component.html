@@ -10,6 +10,62 @@
   </div>
   <rp-card class="block col-span-1 justify-between mt-4">
     <div class="flex flex-col p-4 gap-3">
+      <h2 class="text-2xl font-semibold mb-4">Radio Buttons (Line Type)</h2>
+
+      <p class="mb-4 text-gray-700">
+        This
+        <code class="bg-gray-100 px-1 rounded">rp-radio-buttons</code> component
+        is used to display a list of options as <strong>Radio Buttons</strong>.
+      </p>
+
+      <div class="mb-6">
+        <h3 class="text-xl font-medium mb-2">Properties</h3>
+        <ul class="list-disc list-inside space-y-1 text-gray-700">
+          <li><strong>items</strong>: An array of options to display.</li>
+          <li>
+            <strong>titleKey</strong>: The key in each item that represents the
+            title.
+          </li>
+          <li>
+            <strong>valueKey</strong>: The key in each item that represents the
+            actual value.
+          </li>
+          <li>
+            <strong>defaultValue</strong>: The initially selected value. You
+            should provide the <em>value key</em>.
+          </li>
+          <li>
+            <strong>layout</strong>: Layout of the radio buttons, like
+            <code>row</code> or <code>column</code>.
+          </li>
+          <li><strong>name</strong>: The name of the radio button group.</li>
+          <li>
+            <strong>onChange</strong>: Function called when selection changes;
+            returns the selected value.
+          </li>
+        </ul>
+      </div>
+
+      <div class="mb-4">
+        <h3 class="text-xl font-medium mb-2">Usage Example</h3>
+        <pre
+          class="bg-gray-900 text-gray-100 p-4 rounded text-sm overflow-x-auto"
+        >
+&lt;rp-radio-buttons
+  class="flex-1"
+  [titleKey]="'title'"
+  [valueKey]="'value'"
+  [layout]="'row'"
+  [name]="'r1'"
+  [defaultValue]="'RadioButton2'"
+  [items]="getFromDestinationFilterList | async"
+  (onChange)="onChange($event)"
+&gt;&lt;/rp-radio-buttons&gt;
+    </pre
+        >
+      </div>
+    </div>
+    <div class="flex flex-col p-4 gap-3">
       <rp-radio-buttons
         class="flex-1"
         [titleKey]="'title'"
@@ -17,12 +73,68 @@
         [layout]="'row'"
         [name]="'r1'"
         [defaultValue]="'RadioButton2'"
-        [items]="(getFromDestinationFilterList | async)!"
+        [items]="getFromDestinationFilterList | async"
         (onChange)="onChange($event)"
       ></rp-radio-buttons>
     </div>
   </rp-card>
   <rp-card class="block col-span-1 justify-between mt-4">
+    <div class="flex flex-col p-4 gap-3">
+      <h2 class="text-2xl font-semibold mb-4">Radio Buttons (Column Type)</h2>
+
+      <p class="mb-4 text-gray-700">
+        This
+        <code class="bg-gray-100 px-1 rounded">rp-radio-buttons</code> component
+        is used to display a list of options as <strong>Radio Buttons</strong>.
+      </p>
+
+      <div class="mb-6">
+        <h3 class="text-xl font-medium mb-2">Properties</h3>
+        <ul class="list-disc list-inside space-y-1 text-gray-700">
+          <li><strong>items</strong>: An array of options to display.</li>
+          <li>
+            <strong>titleKey</strong>: The key in each item that represents the
+            title.
+          </li>
+          <li>
+            <strong>valueKey</strong>: The key in each item that represents the
+            actual value.
+          </li>
+          <li>
+            <strong>defaultValue</strong>: The initially selected value. You
+            should provide the <em>value key</em>.
+          </li>
+          <li>
+            <strong>layout</strong>: Layout of the radio buttons, like
+            <code>row</code> or <code>column</code>.
+          </li>
+          <li><strong>name</strong>: The name of the radio button group.</li>
+          <li>
+            <strong>onChange</strong>: Function called when selection changes;
+            returns the selected value.
+          </li>
+        </ul>
+      </div>
+
+      <div class="mb-4">
+        <h3 class="text-xl font-medium mb-2">Usage Example</h3>
+        <pre
+          class="bg-gray-900 text-gray-100 p-4 rounded text-sm overflow-x-auto"
+        >
+&lt;rp-radio-buttons
+  class="flex-1"
+  [titleKey]="'title'"
+  [valueKey]="'value'"
+  [layout]="'column'"
+  [name]="'r1'"
+  [defaultValue]="'RadioButton2'"
+  [items]="getFromDestinationFilterList | async"
+  (onChange)="onChange($event)"
+&gt;&lt;/rp-radio-buttons&gt;
+    </pre
+        >
+      </div>
+    </div>
     <div class="flex flex-col p-4 gap-3">
       <rp-radio-buttons
         class="flex-1"
