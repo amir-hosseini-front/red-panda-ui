@@ -9,13 +9,7 @@ import { ArrowDownIconComponent } from '../../svg-icons/arrow-down-icon/arrow-do
   selector: 'app-slide-menu',
   templateUrl: './slide-menu.component.html',
   styleUrls: ['./slide-menu.component.scss'],
-  imports: [
-    RouterLink,
-    RouterLinkActive,
-    CommonModule,
-    AddLinkIconComponent,
-    ArrowDownIconComponent,
-  ],
+  imports: [RouterLink, RouterLinkActive, CommonModule, ArrowDownIconComponent],
   standalone: true,
 })
 export class SlideMenuComponent {

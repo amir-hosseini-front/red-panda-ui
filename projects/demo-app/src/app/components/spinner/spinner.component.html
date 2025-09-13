@@ -1,0 +1,112 @@
+<div class="p-4 h-screen/90 overflow-y-auto">
+  <div class="col-span-2 flex">
+    <div class="relative text-justify">
+      <span class="headerLine"></span>
+      <span
+        class="relative pl-4 bg-background-color z-20 text-2xl font-bold text-side-menu-active-color"
+        >Spinner
+      </span>
+    </div>
+  </div>
+  <rp-card class="block col-span-1 justify-between mt-4">
+    <div class="flex flex-col p-4 gap-3">
+      <rp-spinner
+        *ngIf="loading"
+        class="w-full px-3 block"
+        [color]="'default'"
+        type="line"
+      ></rp-spinner>
+      <rp-spinner
+        *ngIf="loading"
+        class="w-full px-3 block"
+        [color]="'primary'"
+        type="line"
+      ></rp-spinner>
+      <rp-spinner
+        *ngIf="loading"
+        class="w-full px-3 block"
+        [color]="'success'"
+        type="line"
+      ></rp-spinner>
+      <rp-spinner
+        *ngIf="loading"
+        class="w-full px-3 block"
+        [color]="'warning'"
+        type="line"
+      ></rp-spinner>
+      <rp-spinner
+        *ngIf="loading"
+        class="w-full px-3 block"
+        [color]="'danger'"
+        type="line"
+      ></rp-spinner>
+      <div class="flex flex-row p-4 gap-3">
+        <rp-spinner
+          *ngIf="loading"
+          class="px-3 block"
+          type="circle"
+        ></rp-spinner>
+        <rp-spinner
+          *ngIf="loading"
+          class="px-3 block"
+          [color]="'danger'"
+          type="circle"
+        ></rp-spinner>
+        <rp-spinner
+          *ngIf="loading"
+          class="px-3 block"
+          [color]="'primary'"
+          type="circle"
+        ></rp-spinner>
+        <rp-spinner
+          *ngIf="loading"
+          class="px-3 block"
+          [color]="'success'"
+          type="circle"
+        ></rp-spinner>
+        <rp-spinner
+          *ngIf="loading"
+          class="px-3 block"
+          [color]="'warning'"
+          type="circle"
+        ></rp-spinner>
+      </div>
+      <div class="flex flex-row p-4 gap-3">
+        <rp-spinner
+          *ngIf="loading"
+          class="px-3 block"
+          type="circle"
+          [size]="32"
+        ></rp-spinner>
+        <rp-spinner
+          *ngIf="loading"
+          class="px-3 block"
+          [color]="'danger'"
+          type="circle"
+          [size]="32"
+        ></rp-spinner>
+        <rp-spinner
+          *ngIf="loading"
+          class="px-3 block"
+          [color]="'primary'"
+          type="circle"
+          [size]="32"
+        ></rp-spinner>
+        <rp-spinner
+          *ngIf="loading"
+          class="px-3 block"
+          [color]="'success'"
+          type="circle"
+          [size]="32"
+        ></rp-spinner>
+        <rp-spinner
+          *ngIf="loading"
+          class="px-3 block"
+          [color]="'warning'"
+          type="circle"
+          [size]="32"
+        ></rp-spinner>
+      </div>
+    </div>
+  </rp-card>
+</div>

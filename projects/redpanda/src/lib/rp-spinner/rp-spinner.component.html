@@ -1,4 +1,4 @@
-<div *ngIf="type === 'circle'" class="spinner" [ngClass]="[colorState]">
+<div *ngIf="type === 'circle'" class="spinner" [ngClass]="[color]">
   <svg
     viewBox="25 25 50 50"
     [ngStyle]="{ width: size + 'px', height: size + 'px' }"
@@ -9,6 +9,6 @@
 
 <div
   *ngIf="type === 'line'"
-  class="line-progress-bar"
-  [ngClass]="[colorState]"
+  class="line-progress-bar var"
+  [ngClass]="[color]"
 ></div>

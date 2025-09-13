@@ -13,7 +13,7 @@ export class HomeComponent {
   elementList = [
     {
       name: 'rp-btn',
-      link: 'btn',
+      link: 'buttons',
     },
     {
       name: 'rp-modal',
@@ -22,6 +22,10 @@ export class HomeComponent {
     {
       name: 'rp-input',
       link: 'input',
+    },
+    {
+      name: 'rp-spinner',
+      link: 'spinner',
     },
   ];
 }
