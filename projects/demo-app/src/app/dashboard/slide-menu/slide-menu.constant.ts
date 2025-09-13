@@ -39,6 +39,10 @@ export function getMenuItems(): Item[] {
           link: '/buttons',
         },
         {
+          title: 'Radio Buttons',
+          link: '/radio-buttons',
+        },
+        {
           title: 'Input',
           link: '/input',
         },

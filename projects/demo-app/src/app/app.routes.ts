@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { SelectorComponent } from './components/selector/selector.component';
+import { RadioButtonsComponent } from './components/radio-buttons/radio-buttons.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,11 @@ const routes: Routes = [
       {
         path: 'buttons',
         component: BtnComponent,
+        title: 'Home details',
+      },
+      {
+        path: 'radio-buttons',
+        component: RadioButtonsComponent,
         title: 'Home details',
       },
       {
