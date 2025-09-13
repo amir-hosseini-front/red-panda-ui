@@ -50,6 +50,7 @@ export class RpButtonComponent {
     this.openConfirmDialog = false;
   }
   confirm() {
+    this.openConfirmDialog = false;
     this.btnClicked.emit();
   }
 }
