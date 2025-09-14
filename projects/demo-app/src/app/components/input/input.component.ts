@@ -8,11 +8,17 @@ import {
   FormControl,
   ReactiveFormsModule,
 } from '@angular/forms';
+import { RpCardComponent } from '../../../../../redpanda/src/lib/rp-card/rp-card.component';
 
 @Component({
   selector: 'app-input',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, RpInputComponent],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    RpInputComponent,
+    RpCardComponent,
+  ],
   templateUrl: './input.component.html',
   styleUrl: './input.component.scss',
 })
@@ -33,7 +39,7 @@ export class InputComponent {
         validators: [Validators.required],
       }),
       phone: this.fb.control('', {
-        validators: [Validators.required],
+        validators: [Validators.required, Validators.pattern('^[0-9]+$')],
       }),
       code: this.fb.control(
         { value: '', disabled: true },
@@ -45,4 +51,5 @@ export class InputComponent {
   }
 
   ngOnInit(): void {}
+  onEmailChange(event: string) {}
 }
