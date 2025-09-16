@@ -13,7 +13,7 @@ import { RpTableShamsiDateComponent } from '../rp-table-shamsi-date/rp-table-sha
 import { RpTableDateComponent } from '../rp-table-date/rp-table-date.component';
 
 @Component({
-  selector: 'app-rp-table-card-manager',
+  selector: 'rp-table-card-manager',
   templateUrl: './rp-table-card-manager.component.html',
   styleUrls: ['./rp-table-card-manager.component.scss'],
   standalone: true,
@@ -29,7 +29,7 @@ import { RpTableDateComponent } from '../rp-table-date/rp-table-date.component';
     RpTableDateComponent,
   ],
 })
-export class CoreTableCardManagerComponent {
+export class RpTableCardManagerComponent {
   @Input({ required: true }) data!: any;
   @Input({ required: true }) column!: any;
   @Input({ required: true }) allTableData!: any;

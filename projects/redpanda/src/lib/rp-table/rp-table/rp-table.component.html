@@ -1,1 +1,170 @@
-<p>rp-table works!</p>
+<div class="p-2 overflow-x-auto">
+  <table *ngIf="!isRunningOnSmallScreen || !responsive; else smallDeviceCard">
+    <tr>
+      <th
+        class="cursor-pointer text-center"
+        *ngFor="let column of activeColumnsSchema()"
+      >
+        <div
+          class="grid"
+          [ngClass]="[canFilter ? 'grid-rows-2' : 'grid-rows-1']"
+        >
+          <span
+            class="p-2 relative"
+            (click)="sortByHeader(column)"
+            [ngStyle]="{
+              minWidth:
+                column.type === columnsTypes.ACTION_BUTTONS
+                  ? column.data.length * 30 + 'px'
+                  : '',
+              display:
+                column.type === columnsTypes.ACTION_BUTTONS
+                  ? 'inline-block'
+                  : ''
+            }"
+            >{{ column.label }}
+            <app-sort-down-icon
+              class="sort-icon w-2 h-2 inline-block absolute top-3 right-[-3px]"
+              *ngIf="
+                sortDetail?.key == column.key && sortDetail?.sort === 'asc'
+              "
+            ></app-sort-down-icon>
+            <app-sort-up-icon
+              class="sort-icon w-2 h-2 inline-block absolute top-3 right-[-3px]"
+              *ngIf="
+                sortDetail?.key == column.key && sortDetail?.sort === 'desc'
+              "
+            ></app-sort-up-icon>
+            <app-sort-solid-icon
+              class="sort-icon w-2 h-2 inline-block absolute top-3 right-[-3px]"
+              *ngIf="sortDetail?.key !== column.key"
+            ></app-sort-solid-icon>
+          </span>
+          <!-- <rp-column-date-picker
+            *ngIf="canFilter && column.type == columnsTypes.SHAMSI_DATE"
+            [canSelectToday]="true"
+            (onChange)="tableDataFiltered($event, column)"
+          >
+          </rp-column-date-picker> -->
+          <rp-column-input
+            *ngIf="
+              canFilter &&
+              column.type !== columnsTypes.ACTION &&
+              column.type !== columnsTypes.COLOR &&
+              column.type !== columnsTypes.STATUS &&
+              column.type !== columnsTypes.SHAMSI_DATE &&
+              column.type !== columnsTypes.ROW_SELECTOR &&
+              column.type !== columnsTypes.STATUS_ACTIVE &&
+              column.type !== columnsTypes.ACTION_BUTTONS
+            "
+            (onChange)="tableDataFiltered($event, column)"
+          ></rp-column-input>
+          <rp-column-selector
+            *ngIf="
+              (canFilter && column.type == columnsTypes.STATUS) ||
+              (canFilter && column.type == columnsTypes.STATUS_ACTIVE)
+            "
+            [titleKey]="'title'"
+            [valueKey]="'value'"
+            [items]="
+              column.type == columnsTypes.STATUS
+                ? ACTIVE_OPTIONS
+                : YES_NO_OPTIONS
+            "
+            (onItemSelected)="tableDataFiltered($event, column)"
+          ></rp-column-selector>
+        </div>
+      </th>
+    </tr>
+    <tr *ngFor="let data of sortedTableData">
+      <td
+        *ngFor="let column of activeColumnsSchema()"
+        [class]="styleFilter ? styleFilter(data) : ''"
+      >
+        <rp-table-column-manager
+          *ngIf="column.type != columnsTypes.MULTI_COLUMN; else elseBlock"
+          [rowSelector]="rowSelector"
+          (onColumnClicked)="columnClicked($event)"
+          (onColumnValueChanged)="columnValueChanged($event)"
+          [allTableData]="sortedTableData"
+          [data]="data"
+          [column]="column"
+        ></rp-table-column-manager>
+        <ng-template #elseBlock>
+          <rp-table-column-manager
+            *ngFor="let childColumn of column.columns; let i = index"
+            [rowSelector]="rowSelector"
+            (onColumnClicked)="columnClicked($event)"
+            [data]="data"
+            [allTableData]="sortedTableData"
+            [column]="childColumn"
+          >
+            <span *ngIf="i > 0">-</span>
+          </rp-table-column-manager>
+        </ng-template>
+      </td>
+    </tr>
+  </table>
+  <ng-template #smallDeviceCard>
+    <div>
+      <rp-card
+        *ngFor="let data of sortedTableData"
+        [cardClass]="'background-card m-4 p-4 relative'"
+      >
+        <div
+          class="leading-8"
+          *ngFor="let column of activeColumnsSchema()"
+          [class]="
+            column.type === columnsTypes.ACTION_BUTTONS
+              ? 'actionButtons'
+              : column.type === columnsTypes.ROW_SELECTOR
+              ? 'selectRow'
+              : ''
+          "
+        >
+          <span
+            *ngIf="
+              column.type !== columnsTypes.ACTION_BUTTONS &&
+              column.type !== columnsTypes.ROW_SELECTOR
+            "
+            class="secondary-text-color"
+          >
+            {{ column.label }} :
+          </span>
+          <span class="primary-text-color font-semibold">
+            <rp-table-card-manager
+              *ngIf="
+                column.type != columnsTypes.MULTI_COLUMN;
+                else cardManagerElseBlock
+              "
+              [rowSelector]="rowSelector"
+              (onColumnClicked)="columnClicked($event)"
+              [data]="data"
+              [allTableData]="sortedTableData"
+              [column]="column"
+            >
+            </rp-table-card-manager>
+
+            <ng-template #cardManagerElseBlock>
+              <rp-table-card-manager
+                *ngFor="let childColumn of column.columns; let i = index"
+                [rowSelector]="rowSelector"
+                (onColumnClicked)="columnClicked($event)"
+                [data]="data"
+                [allTableData]="sortedTableData"
+                [column]="childColumn"
+              >
+                <span *ngIf="i > 0">-</span>
+              </rp-table-card-manager>
+            </ng-template>
+          </span>
+        </div>
+      </rp-card>
+    </div>
+  </ng-template>
+  <rp-table-no-content
+    *ngIf="!loading"
+    [tableData]="sortedTableData"
+    [loading]="loading"
+  ></rp-table-no-content>
+</div>
