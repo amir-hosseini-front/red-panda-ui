@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-caret-up-icon',
+  selector: 'caret-up-icon',
   templateUrl: './caret-up-icon.component.html',
-  styleUrls: ['./caret-up-icon.component.scss']
+  styleUrls: ['./caret-up-icon.component.scss'],
+  standalone: true,
 })
-export class CaretUpIconComponent {
-
-}
+export class CaretUpIconComponent {}

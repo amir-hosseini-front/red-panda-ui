@@ -1,0 +1,101 @@
+<container-element [ngSwitch]="column.type">
+  <ng-content></ng-content>
+
+  <rp-table-row-selector-column
+    *ngSwitchCase="columnsTypes.ROW_SELECTOR"
+    [rowSelector]="rowSelector"
+    [data]="data"
+    [allTableData]="allTableData"
+    [column]="column"
+  ></rp-table-row-selector-column>
+  <rp-table-status-active-column
+    *ngSwitchCase="columnsTypes.STATUS_ACTIVE"
+    [data]="data"
+    [column]="column"
+    (onColumnValueChanged)="columnValueChanged($event)"
+  ></rp-table-status-active-column>
+
+  <rp-table-status-column
+    *ngSwitchCase="columnsTypes.STATUS"
+    (onColumnValueChanged)="columnValueChanged($event)"
+    [data]="data"
+    [column]="column"
+  ></rp-table-status-column>
+  <rp-table-action-column
+    *ngSwitchCase="columnsTypes.ACTION"
+    [data]="data"
+    [column]="column"
+  ></rp-table-action-column>
+  <rp-table-action-buttons-column
+    *ngSwitchCase="columnsTypes.ACTION_BUTTONS"
+    (onClick)="clicked($event)"
+    [data]="data"
+    [column]="column"
+  ></rp-table-action-buttons-column>
+  <rp-table-shamsi-date
+    *ngSwitchCase="columnsTypes.SHAMSI_DATE"
+    [data]="data"
+    [column]="column"
+  >
+  </rp-table-shamsi-date>
+  <rp-table-date
+    *ngSwitchCase="columnsTypes.DATE"
+    [data]="data"
+    [column]="column"
+  >
+  </rp-table-date>
+
+  <rp-table-color-column
+    *ngSwitchCase="columnsTypes.COLOR"
+    (onColumnValueChanged)="columnValueChanged($event)"
+    [data]="data"
+    [column]="column"
+  ></rp-table-color-column>
+  <!-- <rp-table-detail-viewer-for-report
+    *ngSwitchCase="columnsTypes.DETAIL_VIEWER_FOR_REPORT"
+    [data]="data"
+    [column]="column"
+  ></rp-table-detail-viewer-for-report> -->
+
+  <rp-table-text-column
+    *ngSwitchCase="columnsTypes.TEXT"
+    [data]="data"
+    [column]="column"
+    (onColumnValueChanged)="columnValueChanged($event)"
+    tableDetailViewerManager
+  >
+    <!-- [detailViewerData]="
+      combinedData(column.detailViewer, data[column.detailViewer?.key])
+    " -->
+  </rp-table-text-column>
+
+  <rp-table-number-column
+    *ngSwitchCase="columnsTypes.NUMBER"
+    [data]="data"
+    [column]="column"
+    (onColumnValueChanged)="columnValueChanged($event)"
+    tableDetailViewerManager
+  >
+    <!-- [detailViewerData]="
+      combinedData(column.detailViewer, data[column.detailViewer?.key])
+    " -->
+  </rp-table-number-column>
+
+  <rp-table-selector-column
+    *ngSwitchCase="columnsTypes.SELECTOR"
+    [data]="data"
+    [column]="column"
+    (onColumnValueChanged)="columnValueChanged($event)"
+    tableDetailViewerManager
+  >
+    <!-- [detailViewerData]="
+      combinedData(
+        column.detailViewer,
+        getSelectorData(
+          data[column.key.split('.')[0]],
+          column.detailViewer?.key
+        )
+      )
+    " -->
+  </rp-table-selector-column>
+</container-element>

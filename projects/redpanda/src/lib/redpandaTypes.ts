@@ -33,3 +33,20 @@ export enum DetailViewers {
   SERVICE = 'service',
   VEHICLE = 'vehicle',
 }
+export enum COLUMNS_TYPES {
+  TEXT = 'text',
+  COLOR = 'color',
+  NUMBER = 'number',
+  SELECTOR = 'selector',
+  ROW_SELECTOR = 'row-selector',
+  STATUS = 'status',
+  STATUS_ACTIVE = 'status-active',
+  ACTION = 'action',
+  ACTION_BUTTONS = 'action-buttons',
+  /** @deprecated do not use SHAMSI_DATE please use DATE */
+  SHAMSI_DATE = 'shamsi-date',
+  DATE = 'date',
+  MULTI_COLUMN = 'multiColumn',
+  PELAK = 'pelak',
+  DETAIL_VIEWER_FOR_REPORT = 'detail-viewer-for-report',
+}
