@@ -4,5 +4,6 @@ import { Component } from '@angular/core';
   selector: 'calendar-icon',
   templateUrl: './calendar-icon.component.html',
   styleUrls: ['./calendar-icon.component.scss'],
+  standalone: true,
 })
 export class CalendarIconComponent {}

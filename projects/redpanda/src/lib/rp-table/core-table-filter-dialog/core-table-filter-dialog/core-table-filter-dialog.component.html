@@ -1,0 +1,24 @@
+<rp-card class="block min-w-64 max-h-[80vh] overflow-auto">
+  <div class="root flex mb-6 justify-between">
+    <b class="m-3 self-center">فیلتر جدول</b>
+    <close-icon
+      (click)="close()"
+      class="close-icon h-10 m-3 rounded-full cursor-pointer p-2 hover:shadow-md"
+    ></close-icon>
+  </div>
+
+  <div *ngFor="let column of columnsSchema">
+    <div>
+      <!-- <rp-checkbox
+        class="inline-block w-4 ms-4"
+        [checked]="column.active === undefined ? true : column.active"
+        (onChange)="onCheckboxClicked(column, $event)"
+      ></rp-checkbox> -->
+      {{ column.label }}
+    </div>
+  </div>
+
+  <div class="grid grid-cols-3 gap-x-2 p-3" dir="ltr">
+    <rp-button (btnClicked)="submitBtn()" class="col-span-1"> بستن </rp-button>
+  </div>
+</rp-card>

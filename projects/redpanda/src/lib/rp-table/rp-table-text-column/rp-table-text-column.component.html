@@ -1,0 +1,24 @@
+<span
+  *ngIf="!canEdit"
+  [ngClass]="{
+    'cursor-pointer': column.copyToClipboard,
+    'mouse-edit-cursor': column.editable
+  }"
+  (click)="onTextColumnClicked(column, data[column.key], $event)"
+  >{{ data[column.key] }}</span
+>
+<div class="flex" *ngIf="canEdit">
+  <input
+    [(ngModel)]="value"
+    class="rounded-sm h-7 px-2 border-slate-700"
+    type="text"
+  />
+  <check-icon
+    (click)="setValue()"
+    class="cursor-pointer inline-block w-5 h-5 m-1"
+  ></check-icon>
+  <close-icon
+    (click)="canEdit = false"
+    class="cursor-pointer inline-block w-5 h-5 m-1"
+  ></close-icon>
+</div>

@@ -1,0 +1,21 @@
+.search-box {
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+  background: transparent;
+
+  input {
+    width: 100%;
+    color: var(--default-table-column-input-text-color);
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid var(--default-table-column-input-border-color);
+    font-size: 0.875rem;
+    padding-block: 5px;
+    padding-right: 30px;
+    padding-left: 6px;
+    &:focus {
+      border-bottom: 1px solid #96bdf2;
+    }
+  }
+}
