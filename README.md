@@ -25,3 +25,9 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## publish to github pages
+
+1- ng build demo-app --configuration production --base-href /red-panda-ui/
+2- npx angular-cli-ghpages --dir=dist/demo-app
+3- show web site https://amir-hosseini-front.github.io/red-panda-ui/
