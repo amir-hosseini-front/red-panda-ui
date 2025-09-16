@@ -16,7 +16,7 @@ import { RpTableNumberColumnComponent } from '../rp-table-number-column/rp-table
 import { RpTableSelectorColumnComponent } from '../rp-table-selector-column/rp-table-selector-column.component';
 
 @Component({
-  selector: 'app-rp-table-column-manager',
+  selector: 'rp-table-column-manager',
   templateUrl: './rp-table-column-manager.component.html',
   styleUrls: ['./rp-table-column-manager.component.scss'],
   standalone: true,

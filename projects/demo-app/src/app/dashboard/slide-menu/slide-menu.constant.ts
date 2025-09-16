@@ -66,6 +66,14 @@ export function getMenuItems(): Item[] {
     },
     {
       id: 3,
+      title: 'Table',
+      icon: DialogIconComponent,
+      link: 'table',
+      type: 'menu',
+      child: [],
+    },
+    {
+      id: 3,
       title: 'Modal',
       icon: DialogIconComponent,
       link: 'modal',

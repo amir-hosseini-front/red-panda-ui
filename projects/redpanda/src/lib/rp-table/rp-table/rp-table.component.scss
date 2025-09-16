@@ -1,0 +1,65 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+  text-align: start;
+}
+
+table td,
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-inline-start: 8px;
+}
+table td {
+  font-size: small;
+  color: var(--default-table-td-text-color);
+}
+table tr:nth-child(even) {
+  background-color: var(--default-table-tr-child-background-color);
+}
+
+table tr:hover {
+  background-color: var(--default-table-tr-hover-background-color);
+}
+
+table th {
+  background-color: var(--default-table-th-background-color);
+  text-align: start;
+  color: #1d1d1d;
+}
+
+.actionButtons {
+  position: absolute;
+  bottom: 0;
+  background: var(--default-table-action-buttons-background-color);
+  left: 0;
+  right: 0;
+  text-align: left;
+  border-radius: 0.5rem;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  padding-top: 4px;
+  padding-left: 16px;
+}
+
+.selectRow {
+  position: absolute;
+  left: 0;
+  top: 18px;
+}
+.desc-sort-icon {
+  transform: rotate(180deg);
+}
+
+.sort-icon {
+  fill: var(--default-table-sort-icon-color);
+}
+.background-card {
+  background-color: var(--default-table-background-card-color);
+}
+.secondary-text-color {
+  color: var(--default-table-secondary-text-color);
+}
+.primary-text-color {
+  color: var(--default-table-primary-text-color);
+}
