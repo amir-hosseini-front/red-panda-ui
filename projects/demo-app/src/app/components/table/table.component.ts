@@ -6,6 +6,7 @@ import { ColumnsSchema } from '../../../../../redpanda/src/lib/rp-table/rp-table
 import { COLUMNS_TYPES } from '../../../../../redpanda/src/lib/redpandaTypes';
 import { CloseIconComponent } from '../../../../../redpanda/src/svg-icon/close-icon/close-icon.component';
 import { NgxIndexedDBModule } from 'ngx-indexed-db';
+import { EditSquareIconComponent } from '../../../../../redpanda/src/svg-icon/edit-square-icon/edit-square-icon.component';
 
 @Component({
   selector: 'app-table',
@@ -24,13 +25,11 @@ export class TableComponent {
       type: COLUMNS_TYPES.NUMBER,
       label: 'Row',
       copyToClipboard: true,
-      editable: true,
     },
     {
       key: 'fullName',
       type: COLUMNS_TYPES.TEXT,
       label: 'FullName',
-      editable: true,
     },
     {
       key: 'phoneNumber',
@@ -47,7 +46,6 @@ export class TableComponent {
       key: 'status',
       type: COLUMNS_TYPES.STATUS,
       label: 'Status',
-      editable: true,
     },
     {
       key: 'action',
@@ -57,7 +55,7 @@ export class TableComponent {
         {
           key: 'asd',
           title: 'title',
-          component: CloseIconComponent,
+          component: EditSquareIconComponent,
         },
       ],
     },
@@ -77,7 +75,7 @@ export class TableComponent {
         fullName: 'Ahmad Haeri',
         phoneNumber: '0916273945',
         date: '1991-02-25',
-        status: false,
+        status: true,
       },
       {
         row: 3,

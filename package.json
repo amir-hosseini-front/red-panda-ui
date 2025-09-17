@@ -1,12 +1,13 @@
 {
   "name": "redpanda-ui",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "postinstall": "patch-package",
     "deploy": "ng build demo-app --configuration production --base-href /red-panda-ui/ && npx angular-cli-ghpages --dir=dist/demo-app"
   },
   "private": true,
@@ -21,6 +22,7 @@
     "@angular/router": "^18.2.0",
     "lodash": "^4.17.21",
     "ngx-indexed-db": "^21.0.0",
+    "patch-package": "^8.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.8.1",
     "zone.js": "~0.14.10"

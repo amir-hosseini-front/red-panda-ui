@@ -25,8 +25,8 @@ export class RpTableStatusColumnComponent {
   canEdit = false;
   value: boolean = false;
   radioButtonData = [
-    { value: true, title: 'فعال' },
-    { value: false, title: 'غیر فعال' },
+    { value: true, title: 'Active' },
+    { value: false, title: 'Inactive' },
   ];
 
   onChange(event: string) {

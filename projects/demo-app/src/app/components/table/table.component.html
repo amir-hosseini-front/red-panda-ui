@@ -77,11 +77,9 @@
     </div>
     <div class="flex flex-row p-4 gap-3">
       <rp-table
-        [canFilter]="true"
         [columnsSchema]="columnsSchema"
         [tableData]="tableData"
         [loading]="loading"
-        (onColumnValueChanged)="columnValueChanged($event)"
       ></rp-table>
     </div>
   </rp-card>
