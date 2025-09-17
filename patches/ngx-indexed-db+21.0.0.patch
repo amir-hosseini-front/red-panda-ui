@@ -1,0 +1,16 @@
+diff --git a/node_modules/ngx-indexed-db/fesm2022/ngx-indexed-db.mjs b/node_modules/ngx-indexed-db/fesm2022/ngx-indexed-db.mjs
+index 07b28f1..ce83b19 100644
+--- a/node_modules/ngx-indexed-db/fesm2022/ngx-indexed-db.mjs
++++ b/node_modules/ngx-indexed-db/fesm2022/ngx-indexed-db.mjs
+@@ -1,9 +1,10 @@
+ import * as i0 from '@angular/core';
+-import { InjectionToken, isDevMode, Inject, Injectable, assertInInjectionContext, inject, PLATFORM_ID, DOCUMENT, makeEnvironmentProviders, NgModule } from '@angular/core';
++import { InjectionToken, isDevMode, Inject, Injectable, assertInInjectionContext, inject, PLATFORM_ID, makeEnvironmentProviders, NgModule } from '@angular/core';
+ import { __decorate } from 'tslib';
+ import { Observable, from, combineLatest } from 'rxjs';
+ import { finalize, take } from 'rxjs/operators';
+ import { isPlatformBrowser } from '@angular/common';
++import {DOCUMENT} from '@angular/common'
+ 
+ var DBMode;
+ (function (DBMode) {

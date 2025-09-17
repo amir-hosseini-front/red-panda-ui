@@ -7,7 +7,7 @@
   *ngIf="!canEdit"
   (click)="onColumnClicked(column, data[column.key], $event)"
 >
-  {{ data[column.key] ? "فعال" : "غیر فعال" }}
+  {{ data[column.key] ? "Active" : "Inactive" }}
 </b>
 
 <div class="flex" *ngIf="canEdit">
