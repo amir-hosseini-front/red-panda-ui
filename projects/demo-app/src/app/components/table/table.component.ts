@@ -7,6 +7,7 @@ import { COLUMNS_TYPES } from '../../../../../redpanda/src/lib/redpandaTypes';
 import { CloseIconComponent } from '../../../../../redpanda/src/svg-icon/close-icon/close-icon.component';
 import { NgxIndexedDBModule } from 'ngx-indexed-db';
 import { EditSquareIconComponent } from '../../../../../redpanda/src/svg-icon/edit-square-icon/edit-square-icon.component';
+import { cloneDeep } from 'lodash';
 
 @Component({
   selector: 'app-table',
@@ -18,7 +19,53 @@ import { EditSquareIconComponent } from '../../../../../redpanda/src/svg-icon/ed
 })
 export class TableComponent {
   loading = false;
-  tableData: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);
+  tab = 'ts';
+  tableData: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([
+    {
+      row: 1,
+      fullName: 'Amir Hosseini',
+      phoneNumber: '0916273945',
+      date: '1993-02-25',
+      status: false,
+    },
+    {
+      row: 2,
+      fullName: 'Ahmad Haeri',
+      phoneNumber: '0916273945',
+      date: '1991-02-25',
+      status: true,
+    },
+    {
+      row: 3,
+      fullName: 'Amin Hosseini',
+      phoneNumber: '0916273945',
+      date: '1991-02-25',
+      status: false,
+    },
+  ]);
+  tableDataEditable: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([
+    {
+      row: 1,
+      fullName: 'Amir Hosseini',
+      phoneNumber: '0916273945',
+      date: '1993-02-25',
+      status: false,
+    },
+    {
+      row: 2,
+      fullName: 'Ahmad Haeri',
+      phoneNumber: '0916273945',
+      date: '1991-02-25',
+      status: true,
+    },
+    {
+      row: 3,
+      fullName: 'Amin Hosseini',
+      phoneNumber: '0916273945',
+      date: '1991-02-25',
+      status: false,
+    },
+  ]);
   columnsSchema: ColumnsSchema[] = [
     {
       key: 'row',
@@ -60,41 +107,60 @@ export class TableComponent {
       ],
     },
   ];
+  columnsSchemaEditable: ColumnsSchema[] = [
+    {
+      key: 'row',
+      type: COLUMNS_TYPES.NUMBER,
+      label: 'Row',
+      editable: true,
+    },
+    {
+      key: 'fullName',
+      type: COLUMNS_TYPES.TEXT,
+      label: 'FullName',
+      editable: true,
+    },
+    {
+      key: 'phoneNumber',
+      type: COLUMNS_TYPES.TEXT,
+      label: 'PhoneNumber',
+      editable: true,
+    },
 
-  ngOnInit(): void {
-    this.tableData.next([
-      {
-        row: 1,
-        fullName: 'Amir Hosseini',
-        phoneNumber: '0916273945',
-        date: '1993-02-25',
-        status: false,
-      },
-      {
-        row: 2,
-        fullName: 'Ahmad Haeri',
-        phoneNumber: '0916273945',
-        date: '1991-02-25',
-        status: true,
-      },
-      {
-        row: 3,
-        fullName: 'Amin Hosseini',
-        phoneNumber: '0916273945',
-        date: '1991-02-25',
-        status: false,
-      },
-    ]);
-  }
+    {
+      key: 'date',
+      type: COLUMNS_TYPES.DATE,
+      label: 'Date',
+      editable: true,
+    },
+    {
+      key: 'status',
+      type: COLUMNS_TYPES.STATUS,
+      label: 'Status',
+      editable: true,
+    },
+    {
+      key: 'action',
+      type: COLUMNS_TYPES.ACTION_BUTTONS,
+      label: 'Actin',
+      data: [
+        {
+          key: 'asd',
+          title: 'title',
+          component: EditSquareIconComponent,
+        },
+      ],
+    },
+  ];
 
   columnValueChanged(data: any) {
     this.loading = true;
     setTimeout(() => {
       this.loading = false;
-      const allData = this.tableData.getValue();
-      const index = allData.findIndex((item) => item.id === data.id);
-      if (index > -1) allData[index] = data;
-      this.tableData.next(allData);
-    }, 3000);
+      const items = cloneDeep(this.tableDataEditable.getValue());
+      const index = items.findIndex((item) => item.row === data.row);
+      if (index > -1) items[index] = data;
+      this.tableDataEditable.next(items);
+    }, 500);
   }
 }
