@@ -62,6 +62,12 @@
             </td>
             <td class="border px-4 py-2">Defines the button shape theme.</td>
           </tr>
+          <tr>
+            <td class="border px-4 p-2"><code>onChange</code></td>
+            <td class="border px-4 p-2">string</td>
+            <td class="border px-4 p-2"></td>
+            <td class="border px-4 p-2">Emit value string.</td>
+          </tr>
         </tbody>
       </table>
       <h2 class="text-xl font-semibold mt-6 mb-2">Example</h2>
@@ -72,6 +78,7 @@
     [size]="'xsmall'" 
     [colorState]="'default'" 
     [theme]="'square'"
+    (btnClicked)="onClick($event)"
  &gt; Close &lt;/rp-button&gt; </pre
       >
     </div>
@@ -106,6 +113,7 @@
     [colorState]="'default'" 
     [theme]="'square'"
     [isDisabled]="true"
+    (btnClicked)="onClick($event)"
  &gt; Close &lt;/rp-button&gt; </pre
       >
     </div>
@@ -115,6 +123,7 @@
         [size]="'xsmall'"
         [isDisabled]="true"
         [color]="'Orange'"
+        (btnClicked)="onClick($event)"
         >Close</rp-button
       >
       <rp-button
@@ -171,6 +180,7 @@ const confirmDelete ConfirmDialog = &#123;
     [colorState]="'default'" 
     [theme]="'square'"
     [confirmDialog]="confirmDelete"
+    (btnClicked)="onClick($event)"
  &gt; Delete &lt;/rp-button&gt; </pre
       >
     </div>

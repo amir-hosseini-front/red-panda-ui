@@ -24,4 +24,6 @@ export class BtnComponent {
     text: 'Are you sure about deleting?',
     title: 'Delete Item ',
   };
+
+  onClick(event: any) {}
 }
