@@ -1,0 +1,204 @@
+<div class="p-4 h-screen/90 overflow-y-auto">
+  <div class="col-span-2 flex">
+    <div class="relative text-justify">
+      <span class="headerLine"></span>
+      <span
+        class="relative pl-4 bg-background-color z-20 text-2xl font-bold text-side-menu-active-color"
+        >Buttons
+      </span>
+    </div>
+  </div>
+  <rp-card class="block col-span-1 justify-between mt-4">
+    <div class="flex flex-col p-4 gap-3">
+      <h1 class="text-2xl font-bold mb-4">
+        <code class="bg-gray-200 px-1 py-0.5 rounded">&lt;rp-button&gt;</code>
+        Documentation
+      </h1>
+      <p class="mb-6">
+        The
+        <code class="bg-gray-200 px-1 py-0.5 rounded">rp-button</code>
+        component is a customizable button with configurable
+        <span class="font-semibold">color</span>,
+        <span class="font-semibold">size</span>, and
+        <span class="font-semibold">theme</span> properties.
+      </p>
+      <h2 class="text-xl font-semibold mb-2">Properties</h2>
+      <table
+        class="w-full border border-gray-300 rounded-lg overflow-hidden text-sm"
+      >
+        <thead class="bg-gray-100">
+          <tr>
+            <th class="border px-4 py-2 text-left">Property</th>
+            <th class="border px-4 py-2 text-left">Type</th>
+            <th class="border px-4 py-2 text-left">Possible Values</th>
+            <th class="border px-4 py-2 text-left">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="border px-4 py-2"><code>color</code></td>
+            <td class="border px-4 py-2">string</td>
+            <td class="border px-4 py-2">
+              <code
+                >| 'default' | 'primary' | 'success' | 'warning' |
+                'danger'</code
+              >
+            </td>
+            <td class="border px-4 py-2">Defines the button color.</td>
+          </tr>
+          <tr class="bg-gray-50">
+            <td class="border px-4 py-2"><code>size</code></td>
+            <td class="border px-4 py-2">string</td>
+            <td class="border px-4 py-2">
+              <code>'xsmall' | 'small' | 'medium'</code>
+            </td>
+            <td class="border px-4 py-2">Defines the button size.</td>
+          </tr>
+          <tr>
+            <td class="border px-4 py-2"><code>theme</code></td>
+            <td class="border px-4 py-2">string</td>
+            <td class="border px-4 py-2">
+              <code>'square' | 'round'</code>
+            </td>
+            <td class="border px-4 py-2">Defines the button shape theme.</td>
+          </tr>
+          <tr>
+            <td class="border px-4 p-2"><code>onChange</code></td>
+            <td class="border px-4 p-2">string</td>
+            <td class="border px-4 p-2"></td>
+            <td class="border px-4 p-2">Emit value string.</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="text-xl font-semibold mt-6 mb-2">Example</h2>
+      <pre
+        class="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto text-sm"
+      >
+ &lt;rp-button 
+    [size]="'xsmall'" 
+    [colorState]="'default'" 
+    [theme]="'square'"
+    (btnClicked)="onClick($event)"
+ &gt; Close &lt;/rp-button&gt; </pre
+      >
+    </div>
+    <div class="flex flex-row p-4 gap-3">
+      <rp-button
+        class="col-span-1"
+        [size]="'xsmall'"
+        [colorState]="'default'"
+        (btnClicked)="onClick()"
+        >Close</rp-button
+      >
+      <rp-button [loading]="false" class="col-span-1" [colorState]="'warning'">
+        Update
+      </rp-button>
+      <rp-button [loading]="false" class="col-span-1" [colorState]="'success'">
+        Insert
+      </rp-button>
+      <rp-button [loading]="false" class="col-span-1" [colorState]="'danger'"
+        >Delete</rp-button
+      >
+    </div>
+  </rp-card>
+  <rp-card class="block col-span-1 justify-between mt-4">
+    <div class="flex flex-col p-4 gap-3">
+      <h2 class="text-xl font-semibold mb-2">Property isDisabled</h2>
+      <p class="mb-2">
+        The <code>isDisabled</code> property disables the button when set to
+        <code>true</code>.
+      </p>
+      <h2 class="text-xl font-semibold mt-6 mb-2">Example</h2>
+      <pre
+        class="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto text-sm"
+      >
+ &lt;rp-button 
+    [size]="'xsmall'" 
+    [colorState]="'default'" 
+    [theme]="'square'"
+    [isDisabled]="true"
+    (btnClicked)="onClick($event)"
+ &gt; Close &lt;/rp-button&gt; </pre
+      >
+    </div>
+    <div class="flex flex-row p-4 gap-3">
+      <rp-button
+        class="col-span-1"
+        [size]="'xsmall'"
+        [isDisabled]="true"
+        [color]="'Orange'"
+        >Close</rp-button
+      >
+      <rp-button
+        [loading]="false"
+        class="col-span-1"
+        [isDisabled]="true"
+        [colorState]="'warning'"
+      >
+        Update
+      </rp-button>
+      <rp-button
+        [loading]="false"
+        class="col-span-1"
+        [isDisabled]="true"
+        [colorState]="'success'"
+      >
+        Insert
+      </rp-button>
+      <rp-button
+        [loading]="false"
+        class="col-span-1"
+        [isDisabled]="true"
+        [colorState]="'danger'"
+        >Delete</rp-button
+      >
+    </div>
+  </rp-card>
+  <rp-card class="block col-span-1 justify-between mt-4">
+    <div class="flex flex-col p-4 gap-3">
+      <h2 class="text-xl font-semibold mb-2">confirmDialog</h2>
+      <p class="mb-2">
+        The <code>confirmDialog</code> property accepts an object of type
+        <code>ConfirmDialog</code>. It shows a confirmation dialog to the user
+        before performing the button action.
+      </p>
+      <p class="mb-2">Example configuration object:</p>
+      <pre
+        class="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto text-sm"
+      ><code>
+const confirmDelete ConfirmDialog = &#123;
+  cancelBtn: 'Close',
+  confirmBtn: 'Delete',
+  text: 'Are you sure about deleting?',
+  title: 'Delete Item',
+&#125;;</code></pre>
+
+      <p class="mb-2">Usage in HTML:</p>
+      <pre
+        class="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto text-sm"
+      >
+ &lt;rp-button 
+    class="inline-block !w-32"
+    [size]="'xsmall'" 
+    [colorState]="'default'" 
+    [theme]="'square'"
+    [confirmDialog]="confirmDelete"
+    (btnClicked)="onClick($event)"
+ &gt; Delete &lt;/rp-button&gt; </pre
+      >
+    </div>
+    <div class="flex flex-row p-4 gap-3">
+      <rp-button
+        [loading]="false"
+        class="inline-block !w-32"
+        [colorState]="'danger'"
+        >Delete</rp-button
+      >
+      <!-- <rp-button [theme]="'round'"
+        ><move-to-inbox-icon
+          class="h-5 grid px-3 fill-white"
+        ></move-to-inbox-icon
+      ></rp-button> -->
+    </div>
+  </rp-card>
+</div>

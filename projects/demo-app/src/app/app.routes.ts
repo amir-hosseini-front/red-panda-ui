@@ -8,6 +8,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
 import { SelectorComponent } from './components/selector/selector.component';
 import { RadioButtonsComponent } from './components/radio-buttons/radio-buttons.component';
 import { TableComponent } from './components/table/table.component';
+import { SnackBarComponent } from './components/snack-bar/snack-bar.component';
 
 const routes: Routes = [
   {
@@ -43,6 +44,11 @@ const routes: Routes = [
       {
         path: 'spinner',
         component: SpinnerComponent,
+        title: 'Home details',
+      },
+      {
+        path: 'snackbar',
+        component: SnackBarComponent,
         title: 'Home details',
       },
       {
