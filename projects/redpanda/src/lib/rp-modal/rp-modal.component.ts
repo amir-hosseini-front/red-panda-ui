@@ -14,11 +14,7 @@ export class RpModalComponent {
   @Input() headerTitle: string | undefined = '';
   @Output() close = new EventEmitter<void>();
 
-  ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
-    console.log(__spreadArray);
-  }
+  ngOnInit(): void {}
   onBackdropClick() {
     this.close.emit();
   }

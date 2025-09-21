@@ -54,6 +54,10 @@ export function getMenuItems(): Item[] {
           title: 'Spinner',
           link: '/spinner',
         },
+        {
+          title: 'Snackbar',
+          link: '/snackbar',
+        },
       ],
     },
     {
