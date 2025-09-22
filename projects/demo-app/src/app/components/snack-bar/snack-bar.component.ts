@@ -18,7 +18,7 @@ export class SnackBarComponent {
   }
   save() {
     this.snackbar.show({
-      message: 'عملیات با موفقیت انجام شد ✅',
+      message: 'The operation was successful.',
       type: 'success',
       duration: 4000,
       action: {
