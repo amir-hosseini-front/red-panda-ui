@@ -1,6 +1,3 @@
 <div class="snackbar" [ngClass]="[type, isVisible ? 'show' : '']">
   <span>{{ message }}</span>
-  <button *ngIf="actionLabel" (click)="onActionClick()">
-    {{ actionLabel }}
-  </button>
 </div>

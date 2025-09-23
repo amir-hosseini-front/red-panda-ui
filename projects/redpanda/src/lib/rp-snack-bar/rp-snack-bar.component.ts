@@ -13,26 +13,15 @@ export class SnackbarComponent {
   isVisible = false;
   message = '';
   type: SnackbarData['type'] = 'info';
-  actionLabel?: string;
-  actionCallback?: () => void;
 
   open(data: SnackbarData) {
     this.message = data.message;
     this.type = data.type || 'info';
-    this.actionLabel = data.action?.label;
-    this.actionCallback = data.action?.callback;
 
     this.isVisible = true;
 
     setTimeout(() => {
       this.isVisible = false;
     }, data.duration || 3000);
-  }
-
-  onActionClick() {
-    if (this.actionCallback) {
-      this.actionCallback();
-    }
-    this.isVisible = false;
   }
 }
