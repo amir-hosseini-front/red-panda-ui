@@ -9,16 +9,11 @@ import { SnackbarComponent } from './rp-snack-bar.component';
 import { ComponentPortal } from '@angular/cdk/portal';
 import { Overlay } from '@angular/cdk/overlay';
 
-export interface SnackbarAction {
-  label: string;
-  callback: () => void;
-}
-
+export type SnackbarType = 'success' | 'error' | 'info' | 'warning';
 export interface SnackbarData {
   message: string;
-  type?: 'success' | 'error' | 'info' | 'warning';
+  type?: SnackbarType;
   duration?: number;
-  action?: SnackbarAction;
 }
 @Injectable({ providedIn: 'root' })
 export class SnackbarService {
