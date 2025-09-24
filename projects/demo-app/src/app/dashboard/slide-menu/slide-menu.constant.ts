@@ -2,6 +2,7 @@ import { Type } from '@angular/core';
 import { ComponentIconComponent } from '../../svg-icons/component-icon/component-icon.component';
 import { HomeIconComponent } from '../../svg-icons/home-icon/home-icon.component';
 import { DialogIconComponent } from '../../svg-icons/dialog-icon/dialog-icon.component';
+import { BrowserUpdatedIconComponent } from '../../svg-icons/browser-updated-icon/browser-updated-icon.component';
 
 export interface ItemChild {
   title: string;
@@ -29,6 +30,14 @@ export function getMenuItems(): Item[] {
     },
     {
       id: 2,
+      title: 'Installation',
+      icon: BrowserUpdatedIconComponent,
+      link: '/installation',
+      type: 'menu',
+      child: [],
+    },
+    {
+      id: 3,
       title: 'Component',
       icon: ComponentIconComponent,
       link: null,
@@ -61,7 +70,7 @@ export function getMenuItems(): Item[] {
       ],
     },
     {
-      id: 3,
+      id: 4,
       title: 'Detail',
       icon: null,
       link: null,
@@ -69,7 +78,7 @@ export function getMenuItems(): Item[] {
       child: [],
     },
     {
-      id: 3,
+      id: 5,
       title: 'Table',
       icon: DialogIconComponent,
       link: 'table',
@@ -77,7 +86,7 @@ export function getMenuItems(): Item[] {
       child: [],
     },
     {
-      id: 3,
+      id: 6,
       title: 'Modal',
       icon: DialogIconComponent,
       link: 'modal',

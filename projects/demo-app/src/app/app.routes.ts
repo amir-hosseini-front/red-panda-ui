@@ -9,6 +9,7 @@ import { SelectorComponent } from './components/selector/selector.component';
 import { RadioButtonsComponent } from './components/radio-buttons/radio-buttons.component';
 import { TableComponent } from './components/table/table.component';
 import { SnackBarComponent } from './components/snack-bar/snack-bar.component';
+import { InstallationComponent } from './components/installation/installation.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,11 @@ const routes: Routes = [
     component: DashboardComponent,
     title: 'Home page',
     children: [
+      {
+        path: 'installation',
+        component: InstallationComponent,
+        title: 'Home details',
+      },
       {
         path: 'buttons',
         component: BtnComponent,
