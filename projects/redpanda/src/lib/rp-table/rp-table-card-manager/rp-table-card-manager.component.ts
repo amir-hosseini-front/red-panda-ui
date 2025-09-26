@@ -1,4 +1,10 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  Component,
+  CSP_NONCE,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 // import { NiraSnackBarService } from 'nira-snack-bar';
 import { BehaviorSubject } from 'rxjs';
 import { COLUMNS_TYPES } from '../../redpandaTypes';
@@ -11,6 +17,7 @@ import { RpTableActionColumnComponent } from '../rp-table-action-column/rp-table
 import { RpTableActionButtonsColumnComponent } from '../rp-table-action-buttons-column/rp-table-action-buttons-column.component';
 import { RpTableShamsiDateComponent } from '../rp-table-shamsi-date/rp-table-shamsi-date.component';
 import { RpTableDateComponent } from '../rp-table-date/rp-table-date.component';
+import { SnackbarService } from '../../rp-snack-bar/rp-snack-bar.service';
 
 @Component({
   selector: 'rp-table-card-manager',
@@ -39,7 +46,7 @@ export class RpTableCardManagerComponent {
   get columnsTypes() {
     return COLUMNS_TYPES;
   }
-  // constructor(private niraSnackBar: NiraSnackBarService) {}
+  constructor(private snackbarService: SnackbarService) {}
   getSelectorData(data: any, key: string) {
     if (key) {
       const split = key.split('.');
@@ -60,10 +67,11 @@ export class RpTableCardManagerComponent {
     navigator.clipboard
       .writeText(data)
       .then((e) => {
-        // this.niraSnackBar.show('با موفقیت کپی شد', {
-        //   statusClass: 'success',
-        //   duration: 3000,
-        // });
+        this.snackbarService.show({
+          message: 'Copy was successful.',
+          type: 'success',
+          duration: 5000,
+        });
       })
       .catch((e) => console.error(e));
   }
