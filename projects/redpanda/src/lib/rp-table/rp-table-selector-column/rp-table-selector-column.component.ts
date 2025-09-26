@@ -4,6 +4,7 @@ import { cloneDeep } from 'lodash';
 import { RpSelectorComponent } from '../../rp-selector/rp-selector.component';
 import { CloseIconComponent } from '../../../svg-icon/close-icon/close-icon.component';
 import { CheckIconComponent } from '../../../svg-icon/check-icon/check-icon.component';
+import { SnackbarService } from '../../rp-snack-bar/rp-snack-bar.service';
 // import { NiraSnackBarService } from 'nira-snack-bar';
 
 @Component({
@@ -26,7 +27,7 @@ export class RpTableSelectorColumnComponent {
   canEdit = false;
   value: any;
 
-  // constructor(private niraSnackBar: NiraSnackBarService) {}
+  constructor(private snackbarService: SnackbarService) {}
 
   onChange(event: any) {
     this.value = event;
@@ -47,10 +48,11 @@ export class RpTableSelectorColumnComponent {
       navigator.clipboard
         .writeText(data)
         .then((e) => {
-          // this.niraSnackBar.show('با موفقیت کپی شد', {
-          //   statusClass: 'success',
-          //   duration: 3000,
-          // });
+          this.snackbarService.show({
+            message: 'Copy was successful.',
+            type: 'success',
+            duration: 5000,
+          });
         })
         .catch((e) => console.error(e));
     }

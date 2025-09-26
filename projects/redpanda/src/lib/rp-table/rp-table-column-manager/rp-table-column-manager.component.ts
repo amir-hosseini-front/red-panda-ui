@@ -14,6 +14,7 @@ import { RpTableColorColumnComponent } from '../rp-table-color-column/rp-table-c
 import { RpTableTextColumnComponent } from '../rp-table-text-column/rp-table-text-column.component';
 import { RpTableNumberColumnComponent } from '../rp-table-number-column/rp-table-number-column.component';
 import { RpTableSelectorColumnComponent } from '../rp-table-selector-column/rp-table-selector-column.component';
+import { SnackbarService } from '../../rp-snack-bar/rp-snack-bar.service';
 
 @Component({
   selector: 'rp-table-column-manager',
@@ -47,7 +48,7 @@ export class RpTableColumnManagerComponent {
   get columnsTypes() {
     return COLUMNS_TYPES;
   }
-  // constructor(private niraSnackBar: NiraSnackBarService) {}
+  constructor(private snackbarService: SnackbarService) {}
   getSelectorData(data: any, key: string) {
     if (!key) {
       return '';
@@ -69,10 +70,11 @@ export class RpTableColumnManagerComponent {
     navigator.clipboard
       .writeText(data)
       .then((e) => {
-        // this.niraSnackBar.show('با موفقیت کپی شد', {
-        //   statusClass: 'success',
-        //   duration: 3000,
-        // });
+        this.snackbarService.show({
+          message: 'Copy was successful.',
+          type: 'success',
+          duration: 5000,
+        });
       })
       .catch((e) => console.error(e));
   }

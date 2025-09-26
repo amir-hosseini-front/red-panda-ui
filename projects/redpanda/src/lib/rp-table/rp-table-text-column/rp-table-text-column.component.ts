@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { cloneDeep } from 'lodash';
 import { CloseIconComponent } from '../../../svg-icon/close-icon/close-icon.component';
 import { CheckIconComponent } from '../../../svg-icon/check-icon/check-icon.component';
+import { SnackbarService } from '../../rp-snack-bar/rp-snack-bar.service';
 // import { NiraSnackBarService } from 'nira-snack-bar';
 
 @Component({
@@ -21,7 +22,7 @@ export class RpTableTextColumnComponent {
   canEdit = false;
   value = '';
 
-  // constructor(private niraSnackBar: NiraSnackBarService) {}
+  constructor(private snackbarService: SnackbarService) {}
 
   setValue() {
     const newData = cloneDeep(this.data);
@@ -38,10 +39,11 @@ export class RpTableTextColumnComponent {
       navigator.clipboard
         .writeText(data)
         .then((e) => {
-          // this.niraSnackBar.show('با موفقیت کپی شد', {
-          //   statusClass: 'success',
-          //   duration: 3000,
-          // });
+          this.snackbarService.show({
+            message: 'Copy was successful.',
+            type: 'success',
+            duration: 5000,
+          });
         })
         .catch((e) => console.error(e));
     }
