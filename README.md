@@ -29,5 +29,10 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## publish to github pages
 
 1- ng build demo-app --configuration production --base-href /red-panda-ui/
-2- npx angular-cli-ghpages --dir=dist/demo-app
-3- show web site https://amir-hosseini-front.github.io/red-panda-ui/
+2- git init
+3- git add .
+4- git commit -m "Deploy to GitHub Pages"
+5- git branch -M gh-pages
+6- git push -f origin gh-pages
+7- npx angular-cli-ghpages --dir=dist/demo-app
+8- show web site https://amir-hosseini-front.github.io/red-panda-ui/
