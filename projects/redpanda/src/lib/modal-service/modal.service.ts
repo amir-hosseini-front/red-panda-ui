@@ -13,7 +13,6 @@ export class ModalService {
 
   open<T extends object>(component: Type<T>, data?: Partial<T>) {
     if (this.isModalOpen) {
-      console.log('Modal is already open.');
       return;
     }
     this.overlayRef = this.overlay.create({
@@ -35,12 +34,11 @@ export class ModalService {
       Object.assign(componentRef.instance, data);
     }
 
-    this.modalStatusSubject.next('Modal Opened');
+    this.setStatus('Modal Opened');
     this.isModalOpen = true;
     this.modalStatus$.subscribe((status: string) => {
-      console.log('Modal Status:', status); // لاگ وضعیت
       if (status === 'Modal Closed') {
-        this.isModalOpen = false; // مدال بسته شده
+        this.isModalOpen = false;
       }
     });
   }
@@ -50,7 +48,7 @@ export class ModalService {
       this.overlayRef.dispose();
       this.overlayRef = null!;
     }
-    this.modalStatusSubject.next('Modal Closed');
+    this.setStatus('Modal Closed');
     this.isModalOpen = false;
   }
 
