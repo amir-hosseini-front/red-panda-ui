@@ -93,5 +93,13 @@ export function getMenuItems(): Item[] {
       type: 'menu',
       child: [],
     },
+    {
+      id: 6,
+      title: 'Service Modal',
+      icon: DialogIconComponent,
+      link: 'service-modal',
+      type: 'menu',
+      child: [],
+    },
   ];
 }

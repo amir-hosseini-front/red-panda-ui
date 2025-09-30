@@ -10,6 +10,7 @@ import { RadioButtonsComponent } from './components/radio-buttons/radio-buttons.
 import { TableComponent } from './components/table/table.component';
 import { SnackBarComponent } from './components/snack-bar/snack-bar.component';
 import { InstallationComponent } from './components/installation/installation.component';
+import { ModalServiceComponent } from './components/modal-service/modal-service.component';
 
 const routes: Routes = [
   {
@@ -60,6 +61,11 @@ const routes: Routes = [
       {
         path: 'table',
         component: TableComponent,
+        title: 'Home details',
+      },
+      {
+        path: 'service-modal',
+        component: ModalServiceComponent,
         title: 'Home details',
       },
     ],
