@@ -1,1 +1,128 @@
-<div (click)="onClick()">open modal</div>
+<!-- <div (click)="onClick()">open modal</div> -->
+<div class="p-4 h-screen/90 overflow-y-auto">
+  <div class="col-span-2 flex">
+    <div class="relative text-justify">
+      <span class="headerLine"></span>
+      <span
+        class="relative pl-4 bg-background-color z-20 text-2xl font-bold text-side-menu-active-color"
+        >Inputs
+      </span>
+    </div>
+  </div>
+  <rp-card class="block col-span-1 justify-between mt-4">
+    <div class="flex flex-col p-4 gap-3">
+      <h1 class="text-3xl font-bold mb-4">Modal Service – onClick() Example</h1>
+      <p class="text-gray-600 mb-8">
+        The <code class="bg-gray-100 px-1 rounded">onClick()</code> method
+        demonstrates how to open a modal dynamically using the
+        <code class="bg-gray-100 px-1 rounded">ModalService</code> in Angular.
+        It passes custom data to the modal component and listens for modal
+        lifecycle events such as <code>'Close'</code>.
+      </p>
+
+      <!-- HOW IT WORKS -->
+      <div>
+        <h2 class="text-xl font-semibold mb-4">How It Works</h2>
+        <ul class="list-disc list-inside text-gray-700 leading-relaxed">
+          <li>
+            When a user triggers an action, the
+            <code class="bg-gray-100 px-1 rounded">onClick()</code> method is
+            called.
+          </li>
+          <li>
+            The
+            <code class="bg-gray-100 px-1 rounded">modalService.open()</code>
+            method opens the <code>UserFormComponent</code> and injects initial
+            data (name, email).
+          </li>
+          <li>
+            The service’s
+            <code class="bg-gray-100 px-1 rounded">modalStatus$</code>
+            observable emits updates such as <code>'Close'</code>.
+          </li>
+          <li>
+            When <code>'Close'</code> is received,
+            <code class="bg-gray-100 px-1 rounded">modalService.close()</code>
+            is called to close the modal.
+          </li>
+        </ul>
+      </div>
+
+      <!-- PROPERTIES TABLE -->
+      <div>
+        <h2 class="text-xl font-semibold mb-4">Parameters</h2>
+        <div class="overflow-x-auto">
+          <table
+            class="min-w-full border border-gray-200 rounded-xl overflow-hidden text-sm"
+          >
+            <thead class="bg-gray-100">
+              <tr>
+                <th class="text-left p-3 font-semibold">Parameter</th>
+                <th class="text-left p-3 font-semibold">Type</th>
+                <th class="text-left p-3 font-semibold">Description</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              <tr>
+                <td class="p-3 font-mono">UserFormComponent</td>
+                <td class="p-3">Component</td>
+                <td class="p-3">
+                  The Angular component that will be displayed inside the modal.
+                </td>
+              </tr>
+              <tr>
+                <td class="p-3 font-mono">data</td>
+                <td class="p-3">object</td>
+                <td class="p-3">
+                  The initial data passed into the modal (e.g.
+                  <code>name</code>, <code>email</code>).
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- EXAMPLE USAGE -->
+      <h2 class="text-xl font-semibold mb-2">Example Usage</h2>
+      <pre
+        class="bg-gray-900 text-gray-100 text-sm p-4 mt-4 rounded-xl overflow-x-auto"
+      >
+<code>
+onClick() &#123;
+  this.modalService.open(UserFormComponent, &#123;
+    name: 'Ali Redpanda ',
+    email: 'aliredpanda.dev',
+  &#125;);
+
+  this.modalService.modalStatus$.subscribe((data: string) => &#123;
+    if (data === 'Close') &#123;
+      this.modalService.close();
+    &#125;
+  &#125;);
+&#125;
+</code>
+  </pre>
+
+      <!-- NOTES -->
+      <div>
+        <h2 class="text-xl font-semibold mb-2 mt-6">Notes</h2>
+        <ul class="list-disc list-inside text-gray-700 leading-relaxed">
+          <li>
+            Ensure <code class="bg-gray-100 px-1 rounded">ModalService</code> is
+            provided in your Angular module.
+          </li>
+          <li>
+            Always unsubscribe from
+            <code class="bg-gray-100 px-1 rounded">modalStatus$</code> in
+            <code>ngOnDestroy()</code> to avoid memory leaks.
+          </li>
+          <li>
+            This modal pattern is ideal for component libraries, providing a
+            clean and consistent API similar to popular UI kits.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </rp-card>
+</div>
