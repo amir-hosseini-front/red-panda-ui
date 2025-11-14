@@ -1,1 +1,66 @@
-<p>installation works!</p>
+<div class="p-4 h-screen/90 overflow-y-auto">
+  <!-- <rp-card class="block col-span-1 justify-between mt-4"> -->
+
+  <div class="container">
+    <section class="doc-section">
+      <h2>📦 Installation</h2>
+      <p>
+        Use the following command to install
+        <strong>Red Panda UI</strong> into your Angular project:
+      </p>
+
+      <pre class="code-block">
+npm i red-panda-ui
+            </pre
+      >
+    </section>
+
+    <section class="doc-section">
+      <h2>🎨 Adding Styles</h2>
+      <p>
+        To enable global styles for Red Panda UI, add the stylesheet to your
+        Angular project.
+      </p>
+
+      <h3>Option 1 — angular.json</h3>
+      <pre class="code-block">
+"styles": [
+    "node_modules/red-panda-ui/styles/main.css",
+    "src/styles.scss"
+]
+            </pre
+      >
+
+      <h3>Option 2 — styles.scss</h3>
+      <pre class="code-block">
+&#64;import "red-panda-ui/styles/main.css";
+            </pre
+      >
+
+      <p>Choose **one** of the above methods — both work.</p>
+    </section>
+
+    <section class="doc-section">
+      <h2>🔧 Importing Components</h2>
+      <p>You can now import UI modules directly inside your Angular modules:</p>
+
+      <pre class="code-block">
+import  &#123;  PandaButtonModule &#125;  from 'red-panda-ui';
+
+&#64;NgModule( &#123; 
+  imports: [
+    PandaButtonModule
+  ]
+&#125; )
+export class AppModule  &#123; &#125; 
+            </pre
+      >
+    </section>
+
+    <section class="doc-section">
+      <h2>🚀 You're Ready!</h2>
+      <p>Your project is now ready to use Red Panda UI components.</p>
+    </section>
+  </div>
+  <!-- </rp-card> -->
+</div>
