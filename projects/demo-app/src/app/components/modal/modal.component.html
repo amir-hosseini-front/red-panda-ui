@@ -1,10 +1,120 @@
-<p (click)="isModalOpen = !isModalOpen">CLICK MODAL!</p>
-
-<rp-modal
+<div class="p-4 h-screen/90 overflow-y-auto">
+  <div class="col-span-2 flex">
+    <div class="relative text-justify">
+      <span class="headerLine"></span>
+      <span
+        class="relative pl-4 bg-background-color z-20 text-2xl font-bold text-side-menu-active-color"
+        >Selector
+      </span>
+    </div>
+  </div>
+  <rp-card class="block col-span-1 justify-between pt-4">
+    <div class="p-4">
+      <h1 class="text-3xl font-bold">rp-modal Component Documentation</h1>
+      <section class="mb-12">
+        <pre
+          class="mt-6 bg-gray-900 text-gray-200 p-4 rounded text-sm overflow-x-auto"
+        >
+&lt;rp-modal
   [open]="isModalOpen"
   [headerTitle]="'Show Detail'"
   (close)="isModalOpen = false"
->
-  <p>Hello!</p>
-  <p>This is a Modal 🥳</p>
-</rp-modal>
+&gt;
+  &lt;p&gt;Hello!&lt;/p&gt;
+  &lt;p&gt;This is a Modal 🥳&lt;/p&gt;
+&lt;/rp-modal&gt;
+      </pre
+        >
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-2xl font-semibold mb-4">Inputs & Outputs</h2>
+
+        <h3 class="text-xl font-medium mb-2">Inputs</h3>
+        <table class="table-auto w-full mb-6">
+          <thead>
+            <tr class="bg-gray-200 text-left">
+              <th class="p-2">Name</th>
+              <th class="p-2">Type</th>
+              <th class="p-2">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b">
+              <td class="p-2">open</td>
+              <td class="p-2">boolean</td>
+              <td class="p-2">Controls visibility of the modal.</td>
+            </tr>
+            <tr class="border-b">
+              <td class="p-2">headerTitle</td>
+              <td class="p-2">string</td>
+              <td class="p-2">Sets the modal header title.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 class="text-xl font-medium mb-2">Outputs</h3>
+        <table class="table-auto w-full">
+          <thead>
+            <tr class="bg-gray-200 text-left">
+              <th class="p-2">Name</th>
+              <th class="p-2">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b">
+              <td class="p-2">close</td>
+              <td class="p-2">Emitted when user closes the modal.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="mb-20">
+        <h2 class="text-2xl font-semibold mb-4">Custom Styling</h2>
+        <p class="text-gray-700 mb-4">
+          You can customize the modal using CSS variables:
+        </p>
+
+        <pre
+          class="bg-gray-900 text-gray-200 p-4 rounded text-sm overflow-x-auto"
+        >
+rp-modal  &#123; 
+  --rp-modal-backdrop: rgba(0, 0, 0, 0.5);
+  --rp-modal-width: 500px;
+  --rp-modal-radius: 8px;
+  --rp-modal-padding: 16px;
+&#125;
+      </pre
+        >
+
+        <h3 class="text-xl mt-6 font-medium mb-2">Example:</h3>
+
+        <pre
+          class="bg-gray-900 text-gray-200 p-4 rounded text-sm overflow-x-auto"
+        >
+&lt;rp-modal class="custom-modal"&gt;...&lt;/rp-modal&gt;
+      </pre
+        >
+      </section>
+      <section>
+        <h2 class="text-2xl font-semibold mb-4">Usage Example</h2>
+        <button
+          (click)="isModalOpen = !isModalOpen"
+          class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition"
+        >
+          Open Demo Modal
+        </button>
+        <rp-modal
+          id="demoModal"
+          [open]="isModalOpen"
+          [headerTitle]="'Show Detail'"
+          (close)="isModalOpen = !isModalOpen"
+        >
+          <p>Hello!</p>
+          <p>This is a Modal 🥳</p>
+        </rp-modal>
+      </section>
+    </div>
+  </rp-card>
+</div>
